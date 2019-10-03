@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Route} from 'react-router-dom'
-import Conversor from './Conversor/Conversor'
+import Conversor from './components/Conversor/Conversor'
 
 export default function Routes() {
     return (

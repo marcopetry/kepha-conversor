@@ -1,0 +1,48 @@
+.conversor-container {
+    background-color:rgba(255, 255, 255, 0.5);
+    margin: 10em auto 0 auto;
+    border-radius: 1em;    
+}
+
+.conversor-container h3 {
+    padding: 1em 2em;
+}
+
+.input-container {
+    padding: 0em 3em;
+}
+
+.input-conversor {        
+    border-radius: 1em;
+}
+
+.container-input-check {
+    padding: 3em 3.5em;
+}
+
+.form-check {
+    padding-right: 3em;
+}
+
+.form-check-input {
+    width: 2em;
+    height: 2em;
+    margin-right: 1em !important;
+}
+
+.form-check-label {
+    font-size: 1.5em;
+}
+
+.container-alerts {
+    margin: 0em 0 0em 3.5em;
+    padding-bottom: 1em;
+}
+
+.container-alerts h4 {
+    margin: 1em 0.5em;
+}
+
+.alert {
+    border-radius: 1em;
+} 
