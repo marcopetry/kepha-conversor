@@ -1,11 +1,64 @@
+:root {
+    --font-primaria: 'Noto Sans', sans-serif;    
+    --font-secundaria: 'Oswald', sans-serif;    
+}
+
 .conversor-container {
     background-color:rgba(255, 255, 255, 0.5);
-    margin: 10em auto 0 auto;
+    margin: 2em auto 0 auto;
     border-radius: 1em;    
 }
 
+/* Classes para formatar margin, paddings e alguns tamanhos para mobile */
+@media (max-width: 767.98px) { 
+    
+    .conversor-container {
+        margin: 1em auto 3em auto;
+    }
+
+    .conversor-container h3 {
+        padding: 1em 1em !important;
+        font-size: 1em !important;
+    }
+
+    .input-container {
+        padding: 0em 0.5em !important;
+    }
+    
+    .container-input-check {
+        padding: 1em 1em !important;
+    }
+
+    .container-alerts {
+        margin: 0 !important;        
+        padding-bottom: 1em;
+    }
+
+    .container-alerts h4 {
+        margin-top: 0 !important;
+        font-size: 12pt !important;
+    }
+
+    .container-alerts {
+        margin: 0 !important;
+        padding: 1em 0 1em 0.8em !important;
+    }
+
+
+    .form-check-input {
+        width: 1.5em !important;
+        height: 1.5em !important;
+        margin-right: 1em !important;
+    }
+    
+}
+/*Fim das classes para mobile*/
+
+
 .conversor-container h3 {
-    padding: 1em 2em;
+    padding: 1em 2.2em;
+    font-family: var(--font-primaria);
+    font-size: 20pt;
 }
 
 .input-container {
@@ -14,10 +67,12 @@
 
 .input-conversor {        
     border-radius: 1em;
+    font-family: var(--font-secundaria);
+    font-weight: 300;    
 }
 
 .container-input-check {
-    padding: 3em 3.5em;
+    padding: 3em 3.8em;
 }
 
 .form-check {
@@ -32,6 +87,8 @@
 
 .form-check-label {
     font-size: 1.5em;
+    font-family: var(--font-secundaria);
+    font-weight: 700;
 }
 
 .container-alerts {
@@ -41,8 +98,12 @@
 
 .container-alerts h4 {
     margin: 1em 0.5em;
+    font-family: var(--font-primaria);
+    font-size: 15pt;
 }
 
 .alert {
     border-radius: 1em;
+    font-family: var(--font-secundaria);
+    font-weight: 400;
 } 

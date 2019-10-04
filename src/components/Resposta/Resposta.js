@@ -1,13 +1,13 @@
 import React from 'react'
-import { litroOnca, litroGalao, metroMilha, metroPes, quiloLibras, quiloOncas, celsiusKelvin, celsiusFahrenheit, validaEntrada } from '../../helpers/helpers'
+import { litroOnca, litroGalao, metroMilha, metroPes, quiloLibras, quiloOncas, celsiusKelvin, celsiusFahrenheit } from '../../helpers/helpers'
 
 export default function resposta(props){    
 
-    let resposta1 = 'Aqui aparecerá a primeira resposta convertida.';
-    let resposta2 = 'Aqui aparecerá a segunda resposta convertida.';
+    let resposta1 = '';
+    let resposta2 = '';
     let entrada = props.entrada;
-    let unidade = props.unidade;
-    let entradaValida = validaEntrada(entrada, unidade);    
+    let unidade = props.unidade;    
+    let entradaValida = props.validaEntrada;
 
     if(unidade === 'litro'){
         resposta1 = (litroOnca(entrada).toFixed(3) + ' onças americanas.');
@@ -26,20 +26,20 @@ export default function resposta(props){
 
     if(unidade === 'graus'){
         resposta1 = (celsiusKelvin(entrada).toFixed(3) + ' kelvin.');
-        resposta2 = (celsiusFahrenheit(entrada).toFixed(3) + ' fahrenheit')
+        resposta2 = (celsiusFahrenheit(entrada).toFixed(3) + ' fahrenheit.')
     }    
 
-    if(entrada === '' || unidade === ''){
+    if((resposta1 === '' && resposta2 === '') || entrada === ''){        
         return(
             <div></div>
         );
     }
-    
-    if(!entradaValida){
+  
+    if(entradaValida !== true){
         return (
             <div className="container-alerts">                
                 <div className="alert alert-danger col-11" role="alert">
-                    Entrada Invalida
+                    {entradaValida}
                 </div>                
             </div>
         );
@@ -54,6 +54,7 @@ export default function resposta(props){
                     {resposta2}
                 </div>                
             </div>
+            
         );   
     }
 

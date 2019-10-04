@@ -31,13 +31,14 @@ export const celsiusFahrenheit = (graus) => {
 }
 
 export const validaEntrada = (entrada, unidade) => {
-    if(entrada === '0')
-        return false;
+        
+    if(entrada < 0.0000001 && unidade !== 'graus' && unidade !== '' && entrada.indexOf(' ') === -1)
+        return 'Não pode colocar valores negativos para essa unidade de medida';
 
-    if(entrada < 0 && unidade !== 'graus')
-        return false;
-
+    //válida caracteres não numéricos e espaços
+    if(isNaN(entrada*1) || entrada.indexOf(' ') !== -1)
+        return 'Você inseriu caracteres não númericos e/ou espaços';   
+    
     return true;
 }
 
-//unidade === 'litro' || unidade === 'metro' || unidade === 'quilo'

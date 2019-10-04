@@ -1,18 +1,19 @@
 import React, { useState } from 'react'
 import './Conversor.css'
 import Resposta from '../Resposta/Resposta'
+import { validaEntrada } from '../../helpers/helpers';
 
 export default function Conversor (){
     const [entrada, setEntrada] = useState(''),
         [unidadeMedida, setUnidade] = useState('');
-
+        
     return(
         <div className="col-10 col-md-6 conversor-container">
-            <h3 className="m-auto">Digite o valor que deseja converter e escolha a unidade:</h3>
+            <h3 className="m-auto texto-cabecalho">Digite o valor que deseja converter e escolha a unidade:</h3>
             <div className="form-group input-container">                
                 <input  className="form-control input-conversor" 
                         type="text" 
-                        placeholder="Coloque aqui o valor que deseja converter:"
+                        placeholder="Digite aqui o valor que deseja converter:"
                         value={entrada}
                         onChange={e => setEntrada(e.target.value)} 
                         />            
@@ -67,7 +68,7 @@ export default function Conversor (){
                     <label className="form-check-label" htmlFor="inlineRadio3">Graus</label>
                 </div>                                                                  
             </div>
-            <Resposta unidade={unidadeMedida} entrada={entrada} />
+            <Resposta unidade={unidadeMedida} entrada={entrada} validaEntrada={validaEntrada(entrada, unidadeMedida)}/>
         </div>
                   
     );
